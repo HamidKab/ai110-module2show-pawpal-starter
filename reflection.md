@@ -30,6 +30,7 @@ time
 
 - Did your design change during implementation?
 - If yes, describe at least one change and why you made it.
+My design didn't change but it expanded on tasks i didnt focus on in my explanation
 
 ---
 

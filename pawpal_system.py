@@ -94,3 +94,35 @@ class Owner:
             print(f"Tasks for {pet.name}:")
             for task in pet.tasks:
                 print(f"- {task.__class__.__name__} at {task.time} [{task.status}]")
+
+# ----------------------
+# Scheduler Class
+# ----------------------
+
+class Scheduler:
+    def __init__(self, owner: Owner):
+        self.owner = owner
+
+    def generate_daily_schedule(self):
+        all_tasks = []
+
+        for pet in self.owner.pets:
+            for task in pet.tasks:
+                all_tasks.append((pet, task))
+
+        # Sort tasks by time first, then priority (higher priority first)
+        sorted_tasks = sorted(
+            all_tasks,
+            key=lambda item: (item[1].time, -item[1].priority)
+        )
+
+        # Convert to printable strings
+        schedule_lines = []
+        for pet, task in sorted_tasks:
+            schedule_lines.append(
+                f"{pet.name} - {task.__class__.__name__} at "
+                f"{task.time.strftime('%H:%M')} "
+                f"[Priority {task.priority}]"
+            )
+
+        return schedule_lines
