@@ -7,6 +7,25 @@
 - Briefly describe your initial UML design.
 - What classes did you include, and what responsibilities did you assign to each?
 
+My intial design consist of Owners, pets, and task with the task linking to different method classes.
+for owner there's:
+owner id
+name 
+addPet()
+
+Pet:
+pet id
+name
+species 
+breed
+addTask
+
+Task:
+task id
+Priority 
+time
+
+
 **b. Design changes**
 
 - Did your design change during implementation?
