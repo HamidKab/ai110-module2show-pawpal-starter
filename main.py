@@ -30,14 +30,16 @@ def main():
 
     task1 = Walk(
         task_id=1,
-        time=now + timedelta(hours=1),
+        time_obj=now.replace(hour=11, minute=30, second=0, microsecond=0),
+        time="11:30",
         priority=2,
         duration=30
     )
 
     task2 = Feed(
         task_id=2,
-        time=now + timedelta(hours=2),
+        time_obj=now.replace(hour=12, minute=45, second=0, microsecond=0),
+        time= "12:45",
         priority=1,
         food_type="Dry Kibble",
         portion_size="1 cup"
@@ -45,10 +47,19 @@ def main():
 
     task3 = GiveMedicine(
         task_id=3,
-        time=now + timedelta(hours=3),
+        time_obj=now.replace(hour=15, minute=45, second=0, microsecond=0),
+        time="15:45",
         priority=3,
         medication_name="PetMed",
         dosage="5ml"
+    )
+    task4 = Walk(
+        task_id=4,
+        time_obj=now.replace(hour=12, minute=45, second=0, microsecond=0),
+        time="12:45",
+        priority=2,
+        duration=30,
+        recurrence="daily"
     )
 
     # ----------------------
@@ -57,6 +68,7 @@ def main():
     pet1.add_task(task1)
     pet1.add_task(task2)
     pet2.add_task(task3)
+    pet1.add_task(task4)
 
     # ----------------------
     # Print Today's Schedule
