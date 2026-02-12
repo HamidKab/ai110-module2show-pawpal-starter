@@ -42,6 +42,9 @@ pip install -r requirements.txt
 6. Connect your logic to the Streamlit UI in `app.py`.
 7. Refine UML so it matches what you actually built.
 
+### Features
+Users are able to add owners, pets and task through the sites UI which is then wired to the backend 
+
 ### Testing PawPal+
  run with python -m unittest test/test_pawpals.py
  My test cover:
@@ -68,3 +71,5 @@ test_recurring_task_creates_next_occurrence - Verifies daily recurring tasks cre
 test_non_recurring_task_no_next_occurrence - Ensures one-time tasks don't recur
 
  I feel like the system is running at 4.5 stars. I only dont give it 5 stars because theres always might be little bugs that don't break the system or come up in test cases. Users are like little goblins that can find any type of bug so I wont say its fullproof
+
+ ![alt text](image.png)
